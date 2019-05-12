@@ -13,59 +13,60 @@ ${DELAY}   0
 ${VALID USER}   testerwsb_t1
 ${VALID PASSWORD}   adam1234
 ${LOGIN URL}  https://profil.wp.pl/login.html?zaloguj=poczta
+${LOGIN PAGE}   Poczta - Najlepsza Poczta, największe załączniki - WP
 ${LOGIN XPATH}   //*[@id="login"]
 ${PASSWORD XPATH}   //*[@id="password"]
 ${BUTTON}   //*[@id="btnSubmit"]
 
 *** Test Cases ***
-Print Text On Screen
+Print On Screen A Message
     Log To Console  Hello world!
 
-Print Text On Screen With Keyword
+Print On Screen A Message With Keyword
     Print   Hello world again!
 
-Print Text On Screen With Keyword And Variable
+Print On Screen A Message With Keyword And Variable
     Print   ${MESSAGE}
 
-Sprawdzenie czy nawiazano polaczenie ze zdalnym komputerem
+Verify Connection With Remote Host
     Open Connection And Log In
     Verify
     Close Connection
 
-Sprawdzenie czy liczba procesorow jest rowna 4
+Verify That Number Of Cores Is 4
     Open Connection And Log In
     Processors
     Close Connection
 
-Sprawdzenie cz jestesmy zalogowani na hoscie
+Verify That I Am Logged On Host
     Open Connection And Log In
     Hostname
     Close Connection
 
-Sprawdzenie czy mamy polaczenie z internetem
+Verify That There Is Internet Connection
     Open Connection And Log In
     Ping
     Close Connection
 
-Otwarcie przegladarki i zalogowanie sie na poczte i sprawdzenie odebrane
+Verify That There Is A Word "Odebrane" On Page
     Open Browser To Login Page
-    Poczekaj
+    Wait For DOM
     Input User Name   ${VALID USER}
     Input Password   ${VALID PASSWORD}
-    Nacisniecie zaloguj
-    Sprawdzenie Odebrane
-    Zrzut Ekranu
-    Zamkniecie Przegladarki
+    Submit Credentials
+    Verify Received
+    Take Screenshot
+    Close Browser
 
-Otwarcie przegladarki, logowanie "wrong password"
+Invalid Password Logging
     Open Browser To Login Page
-    Poczekaj
+    Wait For DOM
     Input User Name   ${VALID USER}
     Input Password   invalid
-    Nacisniecie zaloguj
-    Sprawdzenie informacji o blednym hasle
-    Zrzut Ekranu
-    Zamkniecie Przegladarki
+    Submit Credentials
+    Verify Invalid Password
+    Take Screenshot
+    Close Browser
 
 
 *** Keywords ***
@@ -98,6 +99,12 @@ Close Connection
 
 Open Browser To Login Page
     Open Browser   ${LOGIN URL}   ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed   ${DELAY}
+    Login Page Should Be Open
+
+Login Page Should Be Open
+    Title Should Be    ${LOGIN PAGE}
 
 Input User Name
     [Arguments]   ${username}
@@ -107,20 +114,20 @@ Input Password
     [Arguments]   ${password}
     Input Text   ${PASSWORD XPATH}   ${password}
 
-Nacisniecie zaloguj
+Submit Credentials
     Click Button   ${BUTTON}
 
-Sprawdzenie Odebrane
+Verify Received
     Page Should Contain   Odebrane
 
-Sprawdzenie informacji o blednym hasle
+Verify Invalid Password
     Page Should Contain   Niestety podany login lub hasło jest błędne.
 
-Zrzut Ekranu
+Take Screenshot
     Capture Page Screenshot   filename=seleniumscreenshot-{index}.png
 
-Poczekaj
+Wait For DOM
     Set Selenium Implicit Wait   10
 
-Zamkniecie Przegladarki
+Close Browser
     Close All Browsers

@@ -6,4 +6,5 @@
 .idea/modules.xml
 .idea/robot.iml
 .idea/workspace.xml
+.idea/vcs.xml
 /seleniumscreenshot*

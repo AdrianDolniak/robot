@@ -3,7 +3,7 @@ Library   SSHLibrary
 Library  SeleniumLibrary
 
 *** Variables ***
-${MESSAGE}   Witaj!
+${MESSAGE}   Hello world again and again!
 ${REM_HOST}   localhost
 ${REM_USERNAME}   adi
 ${REM_PASSWORD}   adi!
@@ -71,8 +71,8 @@ Invalid Password Logging
 
 *** Keywords ***
 Print
-   [Arguments]   ${text}
-   Log To Console   ${text}
+    [Arguments]   ${text}
+    Log To Console   ${text}
 
 Open Connection And Log In
     Open Connection   ${REM_HOST}

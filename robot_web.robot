@@ -63,6 +63,7 @@ Verify Invalid Password
     Page Should Contain   Niestety podany login lub hasło jest błędne.
 
 Take Screenshot
+    Set Screenshot Directory   /home/adi/PycharmProjects/robot/Screenshots
     Capture Page Screenshot   filename=seleniumscreenshot-{index}.png
 
 Wait For DOM

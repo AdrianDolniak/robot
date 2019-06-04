@@ -8,7 +8,7 @@ ${REM_HOST}   localhost
 ${REM_USERNAME}   adi
 ${REM_PASSWORD}   adi!
 ${SERVER}   www.wp.pl
-${BROWSER}   Firefox
+${BROWSER}   Chrome
 ${DELAY}   0
 ${VALID USER}   testerwsb_t1
 ${VALID PASSWORD}   adam1234

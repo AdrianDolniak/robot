@@ -12,4 +12,4 @@ test_ssh:
 	robot test_ssh.robot
 
 test_sql:
-    robot test_sql.robot
+	robot test_sql.robot

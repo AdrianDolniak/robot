@@ -29,6 +29,7 @@ Invalid Password Logging
     Input Password   invalid
     Submit Credentials
     Verify Invalid Password
+    Take Screenshot
     Close Browser
 
 

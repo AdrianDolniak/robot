@@ -10,11 +10,21 @@ ${dbHost}   /var/run/postgresql
 ${dbPort}   5432
 
 *** Test Cases ***
-Verify That Table Exist
-    Connecting Database
-
-
+Testing PostgreSQL
+    [Setup]   Connect
+    Check If Table Exists
+    Check Row Count
+    [Teardown]   Disconnect
 
 *** Keywords ***
-Connecting Database
+Connect
     Connect To Database   ${dbapiModuleName}  ${dbName}   ${dbUsername}   ${dbPassword}   ${dbHost}   ${dbPort}
+
+Disconnect
+    Disconnect From Database
+
+Check If Table Exists
+    Table Must Exist  numbers
+
+Check Row Count
+    Row Count Is Equal To X   SELECT * FROM numbers   5

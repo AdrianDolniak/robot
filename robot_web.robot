@@ -16,9 +16,7 @@ ${BUTTON}   //*[@id="btnSubmit"]
 
 *** Test Cases ***
 Verify That There Is A Word "Odebrane" On Page
-    Start Virtual Display
     Open Browser To Login Page
-    Wait For DOM
     Input User Name   ${VALID USER}
     Input Password   ${VALID PASSWORD}
     Submit Credentials
@@ -27,9 +25,7 @@ Verify That There Is A Word "Odebrane" On Page
     Close Browser
 
 Invalid Password Logging
-    Start Virtual Display
     Open Browser To Login Page
-    Wait For DOM
     Input User Name   ${VALID USER}
     Input Password   invalid
     Submit Credentials
@@ -40,9 +36,11 @@ Invalid Password Logging
 
 *** Keywords ***
 Open Browser To Login Page
+    Start Virtual Display
     Open Browser   ${LOGIN URL}   ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed   ${DELAY}
+    Wait For DOM
     Login Page Should Be Open
 
 Login Page Should Be Open
@@ -66,7 +64,7 @@ Verify Invalid Password
     Page Should Contain   Niestety podany login lub hasło jest błędne.
 
 Take Screenshot
-    Set Screenshot Directory   /home/adi/PycharmProjects/robot/Screenshots
+    Set Screenshot Directory   ./Screenshots
     Capture Page Screenshot   filename=seleniumscreenshot-{index}.png
 
 Wait For DOM

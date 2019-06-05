@@ -1,5 +1,6 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  Selenium2Library
+Library   XvfbRobot
 
 *** Variables ***
 ${SERVER}   www.wp.pl
@@ -15,6 +16,7 @@ ${BUTTON}   //*[@id="btnSubmit"]
 
 *** Test Cases ***
 Verify That There Is A Word "Odebrane" On Page
+    Start Virtual Display
     Open Browser To Login Page
     Wait For DOM
     Input User Name   ${VALID USER}
@@ -25,6 +27,7 @@ Verify That There Is A Word "Odebrane" On Page
     Close Browser
 
 Invalid Password Logging
+    Start Virtual Display
     Open Browser To Login Page
     Wait For DOM
     Input User Name   ${VALID USER}

@@ -21,7 +21,6 @@ Verify That There Is A Word "Odebrane" On Page
     Input Password   ${VALID PASSWORD}
     Submit Credentials
     Verify Received
-    Take Screenshot
     Close Browser
 
 Invalid Password Logging

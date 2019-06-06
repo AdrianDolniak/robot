@@ -18,24 +18,24 @@ Print On Screen A Message With Keyword And Variable
     Print   ${MESSAGE}
 
 Verify Connection With Remote Host
-    Open Connection And Log In
+    [Setup]  Open Connection And Log In
     Verify
-    Close Connection
+    [Teardown]  Close Connection
 
 Verify That Number Of Cores Is 4
-    Open Connection And Log In
+    [Setup]  Open Connection And Log In
     Processors
-    Close Connection
+    [Teardown]  Close Connection
 
 Verify That I Am Logged On Host
-    Open Connection And Log In
+    [Setup]  Open Connection And Log In
     Hostname
-    Close Connection
+    [Teardown]  Close Connection
 
 Verify That There Is Internet Connection
-    Open Connection And Log In
+    [Setup]  Open Connection And Log In
     Ping
-    Close Connection
+    [Teardown]  Close Connection
 
 *** Keywords ***
 Print

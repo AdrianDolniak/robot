@@ -16,21 +16,21 @@ ${BUTTON}   //*[@id="btnSubmit"]
 
 *** Test Cases ***
 Verify That There Is A Word "Odebrane" On Page
-    Open Browser To Login Page
+    [Setup]  Open Browser To Login Page
     Input User Name   ${VALID USER}
     Input Password   ${VALID PASSWORD}
     Submit Credentials
     Verify Received
-    Close Browser
+    [Teardown]  Close Browser
 
 Invalid Password Logging
-    Open Browser To Login Page
+    [Setup]  Open Browser To Login Page
     Input User Name   ${VALID USER}
     Input Password   invalid
     Submit Credentials
     Verify Invalid Password
     Take Screenshot
-    Close Browser
+    [Teardown]  Close Browser
 
 
 *** Keywords ***

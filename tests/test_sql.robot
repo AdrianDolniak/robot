@@ -3,7 +3,7 @@ Library  DatabaseLibrary
 
 *** Variables ***
 ${dbapiModuleName}   psycopg2
-${dbName}   adi
+${dbName}   MyDatabase
 ${dbUsername}   adi
 ${dbPassword}   adi!
 ${dbHost}   /var/run/postgresql

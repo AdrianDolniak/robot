@@ -1,0 +1,8 @@
+paramiko
+robotframework
+robotframework-databaselibrary
+robotframework-seleniumlibrary
+robotframework-selenium2library
+robotframework-sshlibrary
+robotframework-xvfb
+xvfbwrapper

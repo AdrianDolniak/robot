@@ -1,9 +1,10 @@
-/log.html
-/output.xml
-/report.html
-/geckodriver.log
 .idea/misc.xml
 .idea/modules.xml
 .idea/robot.iml
 .idea/workspace.xml
 .idea/vcs.xml
+/tests/output.xml
+/tests/geckodriver.log
+/tests/log.html
+/tests/report.html
+/tests/Screenshots/

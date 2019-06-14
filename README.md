@@ -1,5 +1,8 @@
 # Robot Framework - Web and API testing
 
+Xvfb installation:
+
+    $ sudo apt-get install xvfb
 
 Running tests: 
 
@@ -13,3 +16,4 @@ Running tests:
     
 #
 https://robotframework.org/
+https://www.howtoforge.com/tutorial/ubuntu-postgresql-installation/

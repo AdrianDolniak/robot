@@ -10,10 +10,11 @@ ${dbHost}   /var/run/postgresql
 ${dbPort}   5432
 
 *** Test Cases ***
-Testing PostgreSQL
+Testing PostgreSQL Database
     [Setup]   Connect
     Check If Table Exists
     Check Row Count
+    Check Row In Database
     [Teardown]   Disconnect
 
 *** Keywords ***
@@ -28,3 +29,6 @@ Check If Table Exists
 
 Check Row Count
     Row Count Is Equal To X   SELECT * FROM numbers   5
+
+Check Row In Database
+    Check If Exists In Database   SELECT number_id FROM numbers WHERE number=1

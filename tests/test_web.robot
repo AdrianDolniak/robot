@@ -32,7 +32,6 @@ Invalid Password Logging
     Take Screenshot
     [Teardown]  Close Browser
 
-
 *** Keywords ***
 Open Browser To Login Page
     Start Virtual Display
@@ -40,9 +39,6 @@ Open Browser To Login Page
     Maximize Browser Window
     Set Selenium Speed   ${DELAY}
     Wait For DOM
-    Login Page Should Be Open
-
-Login Page Should Be Open
     Title Should Be    ${LOGIN PAGE}
 
 Input User Name
